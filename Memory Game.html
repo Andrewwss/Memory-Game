@@ -133,7 +133,7 @@
 
                 }
                 var finalItemsArr = newArrayItems.concat(newArrayItems);
-                var randomSortFinalItemsArr = finalItemsArr.sort(function() {
+                var randomSortFinalItemsArr = finalItemsArr.sort(function(a, b) {
                     return 0.5 - Math.random()
                 });
 
@@ -171,9 +171,7 @@
                 }
                 flag = false;
             };
-            document.getElementById('play').addEventListener("click", function() {
-                location.reload();
-            });
+
             table.addEventListener("click", function(event) {
                 if (event.target !== table && !flag) {
                     event.target.firstElementChild.dataset.visibility = "show";
@@ -202,7 +200,9 @@
                     }
                 }
             }, false);
-
+            document.getElementById('play').addEventListener("click", function() {
+                location.reload();
+            });
         })();
     </script>
 </body>
